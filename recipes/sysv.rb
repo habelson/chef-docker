@@ -18,14 +18,6 @@ template docker_settings_file do
   notifies :restart, 'service[docker]', :immediately
 end
 
-template docker_storage_settings_file do
-  source 'docker-storage.sysconfig.erb'
-  mode '0644'
-  owner 'root'
-  group 'root'
-  notifies :restart, 'service[docker]', :immediately
-end
-
 service 'docker' do
   supports :status => true, :restart => true, :reload => true
   action [:start, :enable]

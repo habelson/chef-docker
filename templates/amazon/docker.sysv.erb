@@ -29,7 +29,6 @@ lockfile="/var/lock/subsys/$prog"
 logfile="/var/log/$prog"
 
 [ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
-[ -e /etc/sysconfig/${prog}-storage ] && . /etc/sysconfig/${prog}-storage
 
 DOCKER_OPTS="${DOCKER_OPTS:-${other_args}}"
 
@@ -49,7 +48,7 @@ start() {
     prestart
     printf "Starting $prog:\t"
     echo "\n$(date)\n" >> $logfile
-    nohup $exec -d ${DOCKER_OPTS} ${DOCKER_STORAGE_OPTIONS} &>> $logfile &
+    nohup $exec -d ${DOCKER_OPTS} &>> $logfile &
     pid=$!
     sleep 1
     touch $lockfile
