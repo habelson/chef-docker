@@ -46,22 +46,6 @@ EOH
         '/etc/sysconfig/docker'
       end
     end
-	
-	# Path to settings file
-    def self.docker_storage_settings_file(node)
-      case node['platform']
-      when 'debian'
-        '/etc/default/docker-storage'
-      when 'ubuntu'
-        if Docker::Helpers.using_docker_io_package?(node)
-          '/etc/default/docker.io'
-        else
-          '/etc/default/docker-storage'
-        end
-      else
-        '/etc/sysconfig/docker-storage'
-      end
-    end
 
     # Path to Upstart configuration file
     def self.docker_upstart_conf_file(node)
