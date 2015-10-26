@@ -1,5 +1,4 @@
 docker_settings_file = Docker::Helpers.docker_settings_file(node)
-docker_storage_settings_file = Docker::Helpers.docker_storage_settings_file(node)
 
 template '/etc/init.d/docker' do
   source 'docker.sysv.erb'
