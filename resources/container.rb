@@ -31,6 +31,7 @@ attribute :init_type, :kind_of => [FalseClass, String], :default => node['docker
 attribute :init_template, :kind_of => [String]
 attribute :link, :kind_of => [String, Array]
 attribute :log_driver, :kind_of => [String]
+attribute :log_opts, :kind_of => [String, Array]
 attribute :label, :kind_of => [String]
 attribute :lxc_conf, :kind_of => [String, Array]
 attribute :memory, :kind_of => [Fixnum, String]
