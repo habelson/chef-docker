@@ -37,3 +37,6 @@ tmp/
 
 # vagrant-cache
 .cache
+
+# Eclipse
+.project
