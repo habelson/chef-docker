@@ -378,7 +378,7 @@ def run_cli_args
     'label' => new_resource.label,
     'link' => Array(new_resource.link),
     'log-driver' => new_resource.log_driver,
-    'log-opts' => Array(new_resource.log_opts),
+    'log-opt' => Array(new_resource.log_opt),
     'lxc-conf' => Array(new_resource.lxc_conf),
     'memory' => new_resource.memory,
     'net' => new_resource.net,
